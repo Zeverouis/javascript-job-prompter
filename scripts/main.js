@@ -1,6 +1,6 @@
 const departments = {
     marketing: {
-        description: "Marketing omvat verschillende strategieën en activiteiten gericht op het promoten van producten, diensten of merken bij het doelpubliek. Het omvat het begrijpen van de behoeften en voorkeuren van consumenten, het uitvoeren van marktonderzoek, het ontwikkelen van marketingplannen en het implementeren van tactieken om potentiële klanten te bereiken en te betrekken. Marketingprofessionals analyseren markttrends, identificeren doelmarkten en creëren overtuigende boodschappen en communicatiestrategieën om merkbekendheid op te bouwen, klantenwerving te stimuleren en klantloyaliteit te bevorderen",
+        description: "Marketing omvat verschillende strategieën en activiteiten gericht op het promoten van producten, diensten of merken bij het doelpubliek. Het omvat het begrijpen van de behoeften en voorkeuren vanconsumenten, het uitvoeren van marktonderzoek, het ontwikkelen van marketingplannen en het implementeren van tactieken om potentiële klanten te bereiken en te betrekken. Marketingprofessionals analyseren markttrends, identificeren doelmarkten en creëren overtuigende boodschappen en communicatiestrategieën om merkbekendheid op te bouwen, klantenwerving te stimuleren en klantloyaliteit te bevorderen",
         numberOfEmployees: 45,
         jobs: [
             {
@@ -72,3 +72,24 @@ const departments = {
 }
 
 console.log(departments);
+console.log("De afdeling Sales heeft" + " " + departments.sales.numberOfEmployees + " " + "medewerkers")
+console.log("Marketing is een leuke afdeling om te werken." + " " + departments.marketing.description)
+console.log("De afdeling Customer Service heeft" + " " + departments["customer-service"].numberOfEmployees + " " + "medewerkers")
+console.log("Sales is een uitdagende afdeling om te werken als Verkoopmanager" + " " + departments.sales.jobs[1].description)
+
+const userInput = prompt("Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service]");
+console.log(userInput);
+
+switch (userInput) {
+    case "sales":
+        console.log("Je koos" + " " + userInput + " " + departments.sales.description)
+        break;
+    case "marketing":
+        console.log("Je koos" + " " + userInput + " " + departments.marketing.description)
+        break;
+    case "customer-service":
+        console.log("Je koos" + " " + userInput + " " + departments["customer-service"].description)
+        break;
+    default:
+        console.error("Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.")
+}
